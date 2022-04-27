@@ -1,0 +1,102 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16 feb. 2022, 21:43:43
+    Author     : Jorge Víquez
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+
+.header {
+    padding: 60px;
+    text-align: center;
+    color: white;
+    background-image: url(../images/descuentos.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.navbar {
+    display: flex;
+    background-color: darkred;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    padding-left: 0px;
+}
+
+.navbar a {
+    color: white;
+    padding: 20px 30px;
+    text-decoration: none;
+    text-align: right;
+    font-size: 20px;
+
+}
+
+.cupon {
+    padding-top: 8%;
+}
+
+.box {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 25px 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
+}
+
+form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: darkred;
+  background-image: linear-gradient(45deg,darkred,red);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer {
+    padding: 20px;
+    text-align: right;
+    background: cornsilk;
+}
+
+nav a:hover{
+    color: darksalmon;
+}

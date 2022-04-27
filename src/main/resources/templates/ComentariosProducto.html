@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/template::head">    
+        <title>Comentarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/Comentarios.css">
+    </head>
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+    <th:block th:each="c : ${comentarios} " >
+        <div class="card border-dark"  style="max-width: 20rem;margin:20px 20px;">
+            <div class="card-header" style="display:flex; justify-content:space-between"><p th:text="${c.getAutor}"></p><p th:text="${#dates.format(c.getFecha, 'dd-MM-yyyy')}"></p></div>
+            <div class="card-body text-dark">
+                <h5 class="card-title" th:text="${c.getTitulo}"></h5>
+                <p class="card-text" th:text="${c.getComentario}"></p>
+            </div>
+        </div>
+    </th:block>
+    
+
+
+    
+
+    <div>
+        <h1 style="margin-left: 20px;">
+            Dejanos tu comentario!!
+        </h1>
+    </div>
+    <form class="text-left" name="formulario"
+          th:object="${comentario}"
+          th:action="@{/guardarcomentario}"
+          method="POST">
+        <div class="form-group " style="margin-left: 20px;">
+            <label for="exampleFormControlInput1" >Autor</label>
+            <input type="text" class="form-control col-8 col-m-6 col-lg-8" id="exampleFormControlInput1" placeholder="Andres" th:field="*{autor}">
+        </div>
+        <div class="form-group " style="margin-left: 20px;">
+            <label for="exampleFormControlInput1">Titulo</label>
+            <input type="text" class="form-control col-8 col-m-6 col-lg-8" th:field="*{titulo}" id="exampleFormControlInput1" placeholder="La mejor">
+        </div>
+
+        <div class="form-group" style="margin-left: 20px;">
+            <label for="exampleFormControlInput1">Calificacion</label>
+            <select class="form-control col-8 col-m-6 col-lg-8" id="exampleFormControlSelect1" th:field="*{calificacion}">
+                <option th:value="${1}">1</option>
+                <option th:value="${2}">2</option>
+                <option th:value="${3}">3</option>
+                <option th:value="${4}">4</option>
+                <option th:value="${5}">5</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="margin-left: 20px;">
+            <label for="exampleFormControlTextarea1">Comentario</label>
+            <textarea class="form-control col-8 col-m-6 col-lg-8" th:field="*{comentario}" id="exampleFormControlTextarea1" rows="3" placeholder="La pizza mas deliciosa que he comido nunca"></textarea>
+        </div>
+
+        <div class="form-group" style="margin-left: 20px;"> <label for="form18">Cual pizza?</label>
+            <select th:field="*{producto}" class="form-control col-8 col-m-6 col-lg-8" id="form18" required="required" >
+                <option th:each="x:${productos}"
+                        th:value="${x.id}"
+                        th:text="|Pizza: ${x.nombre}"/>
+            </select>
+        </div>
+        <div style="margin: 20px;">
+            <button type="submit" value="Submit" class="btn btn-primary m-20 w-30">Crear Comentario</button>
+        </div>
+    </form>
+    <footer th:replace="plantilla/template::footer"></footer>
+
+</body>
+</html>

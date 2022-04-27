@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head th:replace="plantilla/template::head"></head>
+    <body >
+        <header th:replace="plantilla/template::header"></header>
+        
+        <div class="py-5 text-center " style="background-image: url('https://c1.staticflickr.com/9/8185/8076459430_8446998432_b.jpg');background-size:cover;" >
+            <h1 class="text-light" th:text="${titulo}"></h1>
+            <div class="container">
+                <div class="row">
+                    
+                    <th:block th:each="producto : ${productos} ">
+                        <div class="col-md-4 col-sm-4 my-2">
+                            <div class="card text-center rounded">
+                                <div class="card-header bg-dark text-light">
+                                    <h4 class="card-title m-1" th:text="${producto.getNombre}"></h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Ingredientes</h5>
+                                    <p class="card-text" th:text="${producto.getIngredientes}"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="thead-dark">
+                                                <tr class="text-center">
+                                                    <th>Medida</th>
+                                                    <th>Precio</th>
+                                                    <th>Añadir</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="text-center">
+                                                    <th th:text="${producto.getEstilo.medida}"></th>
+                                                    <td th:text="${producto.getEstilo.precio}"></td>
+                                                    <td><a class="btn btn-outline-primary" href="#"><i class="fa fa-shopping-cart fa-fw"></i> </a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </th:block>
+
+                </div>
+            </div>
+        </div>
+        
+        <footer th:replace="plantilla/template::footer"></footer>
+    </body>
+</html>

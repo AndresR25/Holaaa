@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/template::head"></head>        
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+
+        <div class="text-center py-5" style="background-image: url('images/pizza_1.jpg');background-size:cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-light" th:text="${titulo}"></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="">
+                        <div class="table-responsive">
+                            <table class="table" id="users">
+                                <thead>
+                                    <tr class="text-light text-center">
+                                        <th>Nombre</th>
+                                        <th>Ingredientes</th>
+                                        <th>Medida</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <th:block th:each="producto : ${productos} ">
+                                    <tr class="text-light text-center">
+                                        <td th:text="${producto.getNombre}"></td>
+                                        <td th:text="${producto.getIngredientes}"></td>
+                                        <td th:text="${producto.getEstilo.medida}"></td>
+                                        <td th:text="${producto.getEstilo.precio}"></td>
+                                        <td><a th:href="@{/comentariosproducto/{id}(id=${producto.getId})}">Comentarios</a></td>
+                                        <td><a th:href="@{/editarproducto/{id} (id=${producto.getId})}">Editar</a></td>
+                                        <td><a th:href="@{/borrarproducto/{id}(id=${producto.getId})}">Borrar</a></td>
+                                        
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="plantilla/template::footer"></footer>
+    </body>
+</html>

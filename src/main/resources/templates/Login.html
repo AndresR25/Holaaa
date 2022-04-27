@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/template::head"></head> 
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        
+        <div class="text-center py-5 h-100" style="background-image: url('https://www.bing.com/images/blob?bcid=TsYTVrJUZRAEWQ');background-size:cover;" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-10 bg-white p-5 mx-auto m-5 rounded">
+                        <h1 class="mb-4">Ingresar</h1>
+                        <form th:action="@{/login}" method="post">
+                           
+                            <span class="text-warning" th:text="${message}"></span>
+                            <div class="form-group"> <input type="email" class="form-control" placeholder="Email" id="username" name="username" required="required"> </div>
+                            <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password" required="required"> 
+                                <span class="text-danger" th:text="${error}"></span>
+                                <small class="form-text text-muted text-right">
+                                    <a href="/nuevousuario" style="font-size:15px;"><b>Registrarse</b></a>
+                                </small> 
+                            </div> 
+                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="plantilla/template::footer"></footer>
+    </body>
+</html>

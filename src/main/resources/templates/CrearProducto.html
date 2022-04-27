@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantilla/template::head"></head> 
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        <div class="py-5 text-center h-100"  style="background-image: url('/images/pizza_1.jpg');background-size:cover;">
+            <div class="container">
+                <div class="row m-5 text-light">
+                    <div class="mx-auto col-lg-6 col-10">
+                        <h1>Nuevo Producto</h1>
+                        <p class="mb-3">Formulario de creación de un nuevo producto.</p>
+                        <form class="text-left" th:object ="${producto}"
+                                                th:action ="@{/save}"
+                                                method="POST"
+                                                >
+                            <div class="form-group"> <label for="form16">Nombre</label> <input type="text" class="form-control" id="form16" placeholder="Pizza Napolitana" required="required" name="nombre" th:field="*{nombre}"> </div>
+                            <div class="form-group"> <label for="form17">Ingredientes</label> <input type="text" class="form-control" id="form17" placeholder="Salsa Pizza, Queso, Tomate y Albahaca." required="required" name="ingredientes" th:field="*{ingredientes}"> </div>
+                            <div class="form-group"> <label for="form18">Estilo</label>
+                                <select th:field="*{estilo}" class="form-control" id="form18" required="required" name="estilo">
+                                    <option th:each="x:${estilos}"
+                                            th:value="${x.id}"
+                                            th:text="|Medida: ${x.medida} - Precio: ${x.precio}|"/>
+                                </select>
+                            </div>
+                            <input type="hidden" th:field="*{id}"/>
+                            <button type="submit" class="btn btn-primary w-100">Agregar</button>
+                        </form>        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="plantilla/template::footer"></footer>
+    </body>
+</html>

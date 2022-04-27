@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+
+.header {
+    padding: 60px;
+    text-align: center;
+    color: white;
+    background-image: url(../images/foto.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -350px;
+    opacity: 0.9;
+}
+
+.navbar {
+    display: flex;
+    background-color: darkred;
+
+}
+
+
+.navbar a {
+
+    color: white;
+    padding: 20px 30px;
+    text-decoration: none;
+    text-align: right;
+    font-size: 20px;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.detalles h2{
+    font-size: 50px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color:darkred;
+}
+ul {
+    text-decoration: none;
+}
+.agregar a {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color:whitesmoke;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 90%;
+
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+.panel-info {
+    border-color: #bce8f1;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+.panel-info>.encabezado_panel {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.encabezado_panel{
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.contenido_panel{
+    padding: 15px;
+}
+.imagen_carrito{
+    
+    padding: 60px; 
+    
+}
+.contenido{
+      text-align: center;
+ padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;   
+}
+.footer {
+    padding: 20px;
+    text-align: right;
+    background: cornsilk;
+}
+@media screen and (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}
+
+div a:hover{
+    color: darksalmon;
+}

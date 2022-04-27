@@ -1,0 +1,29 @@
+h4{
+    color:red;
+}
+
+
+.container-comments{
+    margin-top: 20px;
+}
+
+.comments{
+    display:flex;
+}
+
+.info-comments{
+    margin-left: 20px;
+    background: red;
+}
+
+.info-comments .header_comments{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: blue;
+    color:white;
+}
+
+.info-comments p{
+    padding:20px
+}

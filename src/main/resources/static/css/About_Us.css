@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+    
+}
+body{
+    background-image: url(../images/pizza.jpg);
+    background-size: cover;
+    
+}
+.Texto{
+             position:  absolute;
+             top: 50%;
+             left: 50%;
+             width: 800px;
+             height: 250px;
+             background: white;
+             border-radius: 10px;
+             transform: translate(-50%, -50%);
+             
+}
+
+.Texto h2 {
+    color: Orange;
+    font-size: 40px;
+    padding: 10px;
+} 
+
+.Texto p{
+    font-size: 25px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
